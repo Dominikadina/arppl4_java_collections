@@ -7,15 +7,21 @@ public class Zadanie {
     private String nazwa;
     private String tresc;
     private LocalDateTime dateTime;
+    private boolean zadaieZrealizowane;
 
-    @Override
-    public String toString() {
-        return "Zadanie{" +
-                "nazwa='" + nazwa + '\'' +
-                ", tresc='" + tresc + '\'' +
-                ", dateTime=" + dateTime +
-                '}';
+    public Zadanie(String nazwa, String tresc) {
+        this.nazwa = nazwa;
+        this.tresc = tresc;
+        this.dateTime = LocalDateTime.now();
     }
+    public boolean isZadaieZrealizowane() {
+        return zadaieZrealizowane;
+    }
+
+    public void setZadaieZrealizowane(boolean zadaieZrealizowane) {
+        zadaieZrealizowane = zadaieZrealizowane;
+    }
+
 
     public String getNazwa() {
         return nazwa;
@@ -37,13 +43,13 @@ public class Zadanie {
         return dateTime;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
-    }
-
-    public Zadanie(String nazwa, String tresc, LocalDateTime dateTime) {
-        this.nazwa = nazwa;
-        this.tresc = tresc;
-        this.dateTime = dateTime;
+    @Override
+    public String toString() {
+        return "Zadanie{" +
+                "nazwa='" + nazwa + '\'' +
+                ", tresc='" + tresc + '\'' +
+                ", dateTime=" + dateTime +
+                ", zadaieZrealizowane=" + zadaieZrealizowane +
+                '}';
     }
 }
